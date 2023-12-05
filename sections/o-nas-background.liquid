@@ -1,0 +1,18 @@
+{%- if section.settings.fotka_onas_bckg == nil -%}<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" width="100" alt="" class="image-12">{%- else -%}<img src="{{ section.settings.fotka_onas_bckg.src | img_url: 'master' }}" loading="lazy" width="100" alt="{{ section.settings.fotka_onas_bckg.alt | escape }}" class="image-12" srcset="{{ section.settings.fotka_onas_bckg | img_url: '1920x' }} 1920w,{{ section.settings.fotka_onas_bckg | img_url: '1600x' }} 1600w,{{ section.settings.fotka_onas_bckg | img_url: '1366x' }} 1366w,{{ section.settings.fotka_onas_bckg | img_url: '1024x' }} 1024w,{{ section.settings.fotka_onas_bckg | img_url: '768x' }} 768w,{{ section.settings.fotka_onas_bckg | img_url: '640x' }} 640w">{%- endif -%}
+
+<script>var currentSection = document.currentScript.closest('.shopify-section');currentSection.setAttribute("class","bckg-image-o-nas");</script>
+        
+{% schema %}
+{
+  "name": "o-nas-background",
+  "tag": "div",
+  "class": "bckg-image-o-nas",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "fotka_onas_bckg",
+      "label": "fotka-onas-bckg"
+    }
+  ]
+}
+{% endschema %}

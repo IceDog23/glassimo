@@ -1,0 +1,11 @@
+{% capture listItems %}
+{% for item in collections[settings.collection_stolovn].products limit: settings.collection_stolovn_limit %}
+<div role="listitem" class="collection-item-3 w-dyn-item"></div>
+{%- endfor -%}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+<div class="collection-wrapper w-dyn-list" udy-collection="product">
+    {%- unless items_length == 0 -%}<div fs-countitems-element="list" role="list" class="item-counter-collection-list w-dyn-items">
+      {{ listItems }}
+    </div>{%- endunless -%}
+  </div>

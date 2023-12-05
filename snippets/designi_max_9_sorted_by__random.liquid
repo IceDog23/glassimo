@@ -1,0 +1,23 @@
+{% capture listItems %}
+{% paginate shop.metaobjects.designeri.values by 999 %}
+{%- assign allItems = shop.metaobjects.designeri.values -%}
+{%- for item in allItems limit: 9 -%}
+ <div id="w-node-_734f3e71-fff5-c3cf-0a10-cef5b1eff483-0cad2175" role="listitem" class="designer-item w-dyn-item">
+            <a href="{{ item.system.url }}" class="designer-link-photo w-inline-block">
+              <div class="designer-img-wrapper"><img alt="{{ item.jmeno }}" loading="lazy" src="{{ item.hlavni_fotka | img_url: 'master' }}" class="designer-photo"></div>
+            </a>
+            <div class="designer-name-in-list">{{ item.jmeno }}</div>
+          </div>
+{%- endfor -%}
+{% endpaginate %}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="designers-list-wrapper w-dyn-list" udy-collection="designeri">
+        {%- unless items_length == 0 -%}<div role="list" class="designer-list w-dyn-items">
+          {{ listItems }}
+        </div>{%- endunless -%}
+        {%- if items_length == 0 -%}<div class="w-dyn-empty">
+          <div>No items found.</div>
+        </div>{%- endif -%}
+      </div>

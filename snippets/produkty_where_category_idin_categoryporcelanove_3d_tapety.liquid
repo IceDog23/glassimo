@@ -1,0 +1,19 @@
+{% capture listItems %}
+{% paginate collections["porcelanove-3d-tapety"].products by 999 %}
+{%- assign allItems = collections["porcelanove-3d-tapety"].products -%}
+{%- for item in allItems -%}
+  <div role="listitem" class="w-dyn-item"></div>
+
+{%- endfor -%}
+{% endpaginate %}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="collection-wrapper w-dyn-list" udy-collection="product">
+      {%- unless items_length == 0 -%}<div fs-countitems-element="list-4" role="list" class="w-dyn-items">
+        {{ listItems }}
+      </div>{%- endunless -%}
+      {%- if items_length == 0 -%}<div class="w-dyn-empty">
+        <div>No items found.</div>
+      </div>{%- endif -%}
+    </div>

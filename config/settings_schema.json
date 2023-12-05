@@ -1,0 +1,486 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "glassimo",
+    "theme_author": "David Shamal",
+    "theme_version": "0.2.6.",
+    "theme_documentation_url": "https://www.yourmummmyujackass",
+    "theme_support_email": "davidshamal01@gmail.com"
+  },
+  {
+    "name": "Seo Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image",
+        "info": "Will be scaled down to 32x32px"
+      },
+      {
+        "type": "image_picker",
+        "id": "apple_touch_icon",
+        "label": "Apple touch icon image",
+        "info": "Will be scaled down to 120x120px"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_product_rich_snippets",
+        "label": "Enable Product Rich Snippets",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_article_rich_snippets",
+        "label": "Enable Article Rich Snippets",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Colors Settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_black",
+        "label": "Color black",
+        "default": "#0f1108"
+      },
+      {
+        "type": "color",
+        "id": "color_open_color",
+        "label": "Color open color",
+        "default": "#03804b"
+      }
+    ]
+  },
+  {
+    "name": "Products Collection Settings",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_home",
+        "label": "Collection Home"
+      },
+      {
+        "type": "range",
+        "id": "collection_home_limit",
+        "label": "Collection Home limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_produkty_template",
+        "label": "Collection Produkty Template"
+      },
+      {
+        "type": "range",
+        "id": "collection_produkty_template_limit",
+        "label": "Collection Produkty Template limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_dcor",
+        "label": "Collection Décor"
+      },
+      {
+        "type": "range",
+        "id": "collection_dcor_limit",
+        "label": "Collection Décor limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_2_dcor",
+        "label": "Collection 2 Décor"
+      },
+      {
+        "type": "range",
+        "id": "collection_2_dcor_limit",
+        "label": "Collection 2 Décor limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_3_dcor",
+        "label": "Collection 3 Décor"
+      },
+      {
+        "type": "range",
+        "id": "collection_3_dcor_limit",
+        "label": "Collection 3 Décor limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_4_dcor",
+        "label": "Collection 4 Décor"
+      },
+      {
+        "type": "range",
+        "id": "collection_4_dcor_limit",
+        "label": "Collection 4 Décor limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_5_dcor",
+        "label": "Collection 5 Décor"
+      },
+      {
+        "type": "range",
+        "id": "collection_5_dcor_limit",
+        "label": "Collection 5 Décor limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_vzy",
+        "label": "Collection Vázy"
+      },
+      {
+        "type": "range",
+        "id": "collection_vzy_limit",
+        "label": "Collection Vázy limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenn_vzy",
+        "label": "Collection Skleněné vázy"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenn_vzy_limit",
+        "label": "Collection Skleněné vázy limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_porcelnov_vzy",
+        "label": "Collection Porcelánové vázy"
+      },
+      {
+        "type": "range",
+        "id": "collection_porcelnov_vzy_limit",
+        "label": "Collection Porcelánové vázy limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_svtidla",
+        "label": "Collection Svítidla"
+      },
+      {
+        "type": "range",
+        "id": "collection_svtidla_limit",
+        "label": "Collection Svítidla limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_svcny",
+        "label": "Collection Svícny"
+      },
+      {
+        "type": "range",
+        "id": "collection_svcny_limit",
+        "label": "Collection Svícny limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_porcelnov_3d_tapety",
+        "label": "Collection Porcelánové 3D tapety"
+      },
+      {
+        "type": "range",
+        "id": "collection_porcelnov_3d_tapety_limit",
+        "label": "Collection Porcelánové 3D tapety limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_stolovn",
+        "label": "Collection Stolování"
+      },
+      {
+        "type": "range",
+        "id": "collection_stolovn_limit",
+        "label": "Collection Stolování limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_2_stolovn",
+        "label": "Collection 2 Stolování"
+      },
+      {
+        "type": "range",
+        "id": "collection_2_stolovn_limit",
+        "label": "Collection 2 Stolování limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_3_stolovn",
+        "label": "Collection 3 Stolování"
+      },
+      {
+        "type": "range",
+        "id": "collection_3_stolovn_limit",
+        "label": "Collection 3 Stolování limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_4_stolovn",
+        "label": "Collection 4 Stolování"
+      },
+      {
+        "type": "range",
+        "id": "collection_4_stolovn_limit",
+        "label": "Collection 4 Stolování limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_5_stolovn",
+        "label": "Collection 5 Stolování"
+      },
+      {
+        "type": "range",
+        "id": "collection_5_stolovn_limit",
+        "label": "Collection 5 Stolování limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_collections",
+        "label": "Collection Collections"
+      },
+      {
+        "type": "range",
+        "id": "collection_collections_limit",
+        "label": "Collection Collections limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenice",
+        "label": "Collection Sklenice"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenice_limit",
+        "label": "Collection Sklenice limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_drobn_doplky",
+        "label": "Collection Drobné doplňky"
+      },
+      {
+        "type": "range",
+        "id": "collection_drobn_doplky_limit",
+        "label": "Collection Drobné doplňky limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_msy_a_misky",
+        "label": "Collection Mísy a misky"
+      },
+      {
+        "type": "range",
+        "id": "collection_msy_a_misky_limit",
+        "label": "Collection Mísy a misky limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_npojov_sety",
+        "label": "Collection Nápojové sety"
+      },
+      {
+        "type": "range",
+        "id": "collection_npojov_sety_limit",
+        "label": "Collection Nápojové sety limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_msy",
+        "label": "Collection Mísy"
+      },
+      {
+        "type": "range",
+        "id": "collection_msy_limit",
+        "label": "Collection Mísy limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_misky",
+        "label": "Collection Misky"
+      },
+      {
+        "type": "range",
+        "id": "collection_misky_limit",
+        "label": "Collection Misky limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenice_na_vodu",
+        "label": "Collection Sklenice na vodu"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenice_na_vodu_limit",
+        "label": "Collection Sklenice na vodu limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenice_na_alkohol",
+        "label": "Collection Sklenice na alkohol"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenice_na_alkohol_limit",
+        "label": "Collection Sklenice na alkohol limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenice_na_vno",
+        "label": "Collection Sklenice na víno"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenice_na_vno_limit",
+        "label": "Collection Sklenice na víno limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_sklenice_na_pivo",
+        "label": "Collection Sklenice na pivo"
+      },
+      {
+        "type": "range",
+        "id": "collection_sklenice_na_pivo_limit",
+        "label": "Collection Sklenice na pivo limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "collection",
+        "id": "collection_objekty",
+        "label": "Collection Objekty"
+      },
+      {
+        "type": "range",
+        "id": "collection_objekty_limit",
+        "label": "Collection Objekty limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 3
+      }
+    ]
+  }
+]

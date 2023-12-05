@@ -1,0 +1,30 @@
+
+    <div class="section-wrapper">
+      <div class="o-nas-grid-content">
+        <div id="w-node-e1910c86-df0d-18f2-f47c-79296d1d3b88-6d1d3b85" class="rich-text-block w-richtext">{{ section.settings.richtext_o_nas_1 | newline_to_br }}</div>
+        <div id="w-node-e1910c86-df0d-18f2-f47c-79296d1d3b8b-6d1d3b85" class="rich-text-block w-richtext">{{ section.settings.richtext_o_nas_2 | newline_to_br }}</div>
+      </div>
+    </div>
+  
+
+<script>var currentSection = document.currentScript.closest('.shopify-section');currentSection.setAttribute("class","o-nas-content-section");</script>
+        
+{% schema %}
+{
+  "name": "rich-text-o-nas",
+  "tag": "section",
+  "class": "o-nas-content-section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "richtext_o_nas_1",
+      "label": "richtext-o-nas-1"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext_o_nas_2",
+      "label": "richtext-o-nas-2"
+    }
+  ]
+}
+{% endschema %}

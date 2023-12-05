@@ -1,0 +1,16 @@
+{% capture listItems %}
+{% paginate collections["sklenice"].products by 999 %}
+{%- assign allItems = collections["sklenice"].products -%}
+{%- for item in allItems -%}
+  <div role="listitem" class="collection-item-3 w-dyn-item"></div>
+
+{%- endfor -%}
+{% endpaginate %}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="collection-wrapper w-dyn-list" udy-collection="product">
+    {%- unless items_length == 0 -%}<div fs-countitems-element="list" role="list" class="item-counter-collection-list w-dyn-items">
+      {{ listItems }}
+    </div>{%- endunless -%}
+  </div>

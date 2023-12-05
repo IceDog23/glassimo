@@ -1,0 +1,173 @@
+
+    <div class="section-wrapper">
+      <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+        <div class="w-slider-mask">
+          {%- for block in section.blocks -%}{%- if block.type == "slide" -%}<div class="w-slide" block.shopify_attributes>
+            {%- if block.settings.background_slider == nil -%}<div class="div-block-21">
+              <div class="slider-text-field">
+                <h1 class="heading h1">{{ block.settings.nazev_kolekce | newline_to_br }}</h1>
+                <a href="{{ block.settings.link_na_kolekci }}" class="cta-in-hero w-inline-block">
+                  <div class="w-embed">
+                    <div class="div">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad12a18a-3092-4f05-aec7-bd14b863a5b4?" class="img">
+                    </div>
+                    <style>
+  .div {
+    justify-content: center;
+    align-items: center;
+    border-radius: 62.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.08) 100%
+      ),
+      rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(60px);
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .img {
+    aspect-ratio: 6.21;
+    object-fit: contain;
+    object-position: center;
+    width: 87px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+</style>
+                  </div>
+                </a>
+              </div>
+            </div>{%- else -%}<div class="div-block-21" style="background-image: url('{{ block.settings.background_slider.src | img_url: 'master' }}');">
+              <div class="slider-text-field">
+                <h1 class="heading h1">{{ block.settings.nazev_kolekce | newline_to_br }}</h1>
+                <a href="{{ block.settings.link_na_kolekci }}" class="cta-in-hero w-inline-block">
+                  <div class="w-embed">
+                    <div class="div">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad12a18a-3092-4f05-aec7-bd14b863a5b4?" class="img">
+                    </div>
+                    <style>
+  .div {
+    justify-content: center;
+    align-items: center;
+    border-radius: 62.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.08) 100%
+      ),
+      rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(60px);
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .img {
+    aspect-ratio: 6.21;
+    object-fit: contain;
+    object-position: center;
+    width: 87px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+</style>
+                  </div>
+                </a>
+              </div>
+            </div>{%- endif -%}
+          </div>{%- endif -%}{%- endfor -%}
+        </div>
+        <div class="left-arrow w-slider-arrow-left">
+          <div class="icon-embed-custom-6 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+              <g filter="url(#filter0_b_7_5049)">
+                <circle cx="32" cy="32" r="32" fill="currentColor" fill-opacity="0.01"></circle>
+                <circle cx="32" cy="32" r="32" fill="url(#paint0_linear_7_5049)"></circle>
+                <circle cx="32" cy="32" r="31.5" stroke="url(#paint1_linear_7_5049)"></circle>
+              </g>
+              <path d="M34 24L26 32L34 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <filter id="filter0_b_7_5049" x="-120" y="-120" width="304" height="304" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix">
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="60">
+                  <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_7_5049">
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_7_5049" result="shape">
+                </feBlend></feComposite></feGaussianBlur></feFlood></filter>
+                <linearGradient id="paint0_linear_7_5049" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="white" stop-opacity="0"></stop>
+                  <stop offset="1" stop-color="white" stop-opacity="0.08"></stop>
+                </linearGradient>
+                <linearGradient id="paint1_linear_7_5049" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="white" stop-opacity="0.09"></stop>
+                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+            </svg></div>
+        </div>
+        <div class="right-arrow w-slider-arrow-right">
+          <div class="icon-embed-custom-7 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+              <g filter="url(#filter0_b_7_5052)">
+                <circle cx="32" cy="32" r="32" transform="rotate(-180 32 32)" fill="currentColor" fill-opacity="0.01"></circle>
+                <circle cx="32" cy="32" r="32" transform="rotate(-180 32 32)" fill="url(#paint0_linear_7_5052)"></circle>
+                <circle cx="32" cy="32" r="31.5" transform="rotate(-180 32 32)" stroke="url(#paint1_linear_7_5052)"></circle>
+              </g>
+              <path d="M30 40L38 32L30 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <filter id="filter0_b_7_5052" x="-120" y="-120" width="304" height="304" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix">
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="60">
+                  <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_7_5052">
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_7_5052" result="shape">
+                </feBlend></feComposite></feGaussianBlur></feFlood></filter>
+                <linearGradient id="paint0_linear_7_5052" x1="32" y1="-1.90735e-06" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="white" stop-opacity="0"></stop>
+                  <stop offset="1" stop-color="white" stop-opacity="0.08"></stop>
+                </linearGradient>
+                <linearGradient id="paint1_linear_7_5052" x1="32" y1="-1.90735e-06" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="white" stop-opacity="0.09"></stop>
+                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+            </svg></div>
+        </div>
+        <div class="slide-nav w-slider-nav w-round"></div>
+      </div>
+    </div>
+  
+
+<script>var currentSection = document.currentScript.closest('.shopify-section');currentSection.setAttribute("class","hero-section");</script>
+        
+{% schema %}
+{
+  "name": "slider-options",
+  "tag": "section",
+  "class": "hero-section",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "nazev_kolekce",
+          "label": "nazev-kolekce",
+          "default": "František Jungvirt ⎯ Nové barvy váz Garden Basic"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_slider",
+          "label": "background-slider"
+        },
+        {
+          "type": "url",
+          "id": "link_na_kolekci",
+          "label": "link na kolekci"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

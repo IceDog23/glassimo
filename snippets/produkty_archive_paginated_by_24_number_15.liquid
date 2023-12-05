@@ -1,0 +1,56 @@
+{% capture listItems %}
+                        {%- paginate collection.products by 24 -%}
+                        {%- assign pagination = paginate %}
+                        {% for item in collection.products %}
+                        <div role="listitem" class="product-item w-dyn-item">
+                <div class="add-to-cart">
+                  {%- form "product", item, data-node-type: "commerce-add-to-cart-form", class: "w-commerce-commerceaddtocartform" -%}{%- unless item.has_only_default_variant or product.variants.size == 1 -%}<div data-node-type="add-to-cart-option-list" position-id="91a45816-f3b2-f04d-e604-521f8cc1a769" template-part-bind="91a45816-f3b2-f04d-e604-521f8cc1a769">{%- for option in item.options_with_values -%}<fieldset data-node-type="add-to-cart-option" template-part-bind="91a45816-f3b2-f04d-e604-521f8cc1a76a" style="{% if item.has_only_default_variant or product.variants.size == 1 %}display: none; {% endif %}"><label data-node-type="add-to-cart-option-label" class="field-label-10" template-part-bind="91a45816-f3b2-f04d-e604-521f8cc1a76b"></label><select data-node-type="add-to-cart-option-select" class="w-select" style="display: none;" name="{{ "option" | append: forloop.index }}">{%- render "product-options", option: option -%}</select><div data-node-type="add-to-cart-option-pill-group" class="button-group-2 w-commerce-commerceaddtocartoptionpillgroup" aria-label="{{ "option" | append: forloop.index  }}">{%- for value in option.values -%}<div data-node-type="add-to-cart-option-pill" class="w-commerce-commerceaddtocartoptionpill" data-option-name="{{ value | handle }}"><div data-node-type="block" fs-cmsfilter-field="barva" template-part-bind="91a45816-f3b2-f04d-e604-521f8cc1a76f">{{ value }}</div></div>{%- endfor -%}</div></fieldset>{%- endfor -%}</div>{%- endunless -%}{%- assign condition_value = item.type | strip -%}{%- unless condition_value == "e348fd487d0102946c9179d2a94bb613" -%}<label for="quantity-d027b83e876ddb45ebe9cfafa6fd05ed" position-id="91a45816-f3b2-f04d-e604-521f8cc1a770" class="field-label-9 w-password-page">Quantity</label>{%- endunless -%}<input type="submit" data-loading-text="Adding to cart..." data-node-type="commerce-add-to-cart-button" class="w-commerce-commerceaddtocartbutton" value="Add to Cart" style="display:none" aria-haspopup="dialog" aria-busy="false" position-id="91a45816-f3b2-f04d-e604-521f8cc1a773">
+                    <a position-id="91a45816-f3b2-f04d-e604-521f8cc1a774" data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" aria-busy="false" aria-haspopup="false" style="display:none" class="w-commerce-commercebuynowbutton" href="/checkout">Buy now</a>
+                  {%- render "product-variants-data-currency" product: item -%}{%- endform -%}
+                </div>
+                <div class="div-block-15">
+                  <div fs-cmsfilter-field="dostupnost" class="paragraph skladem">{{ item.metafields.udesly['dostupnost-3'] }}</div>
+                </div>
+                <a href="{{ item.url }}" class="link-block w-inline-block">
+                  <div class="overlay-on-product-2"></div><img alt="{{ item.featured_image.alt }}" src="{{ item.featured_image | img_url: 'master' }}" height="254" class="product-photo" data-commerce-type="variation-image" srcset="{{ item.featured_image | img_url: '1920x' }} 1920w,{{ item.featured_image | img_url: '1600x' }} 1600w,{{ item.featured_image | img_url: '1366x' }} 1366w,{{ item.featured_image | img_url: '1024x' }} 1024w,{{ item.featured_image | img_url: '768x' }} 768w,{{ item.featured_image | img_url: '640x' }} 640w">
+                  <div class="product-text-fields">
+                    <div class="product-namexdesigner-wrapper">
+                      {%- assign refItem = item.metafields.custom.designer.value -%}<div fs-cmsfilter-field="designer" class="designer-name">{{ refItem.jmeno }}</div>
+                      <div fs-cmssort-field="nazev" class="product-name">{{ item.title }}</div>
+                    </div>
+                    <div data-commerce-type="variation-price" fs-cmssort-field="cena" fs-cmsfilter-field="cena" class="price">{{ item.price | money_with_currency }}</div>
+                  </div>
+                </a>
+                <div fs-cmssort-type="date" class="date">{{ item.published_at | date: "%B %e, %Y" }}</div>
+              </div>
+                        {% endfor %}
+                        {%- endpaginate -%}
+                        {% endcapture %}
+{% assign items_length = listItems | strip | size %}
+    <div id="w-node-a9cf6f0f-2d94-00a3-8c8a-227907ab251e-83d376a8" class="product-list-wrapper w-dyn-list" udy-collection="product">
+            {%- unless items_length == 0 -%}<div fs-cmsload-mode="pagination" class="product-list w-dyn-items" fs-cmsfilter-element="list" role="list" fs-cmssort-element="list" fs-cmsload-pagesiblings="2" fs-cmsload-element="list" fs-cmsfilter-showquery="true">
+              {{ listItems }}
+            </div>{%- endunless -%}
+            {%- if items_length == 0 -%}<div class="w-dyn-empty">
+              <div>No items found.</div>
+            </div>{%- endif -%}
+            <div role="navigation" aria-label="List" class="w-pagination-wrapper pagination-4">
+              {%- if pagination.previous.is_link -%}<a href="{{ pagination.previous.url }}" aria-label="Previous Page" class="w-pagination-previous previous-2">
+                <div class="icon-embed-xxsmall arrow-right pagination w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="pagination-text w-inline-block">Předchozí stránka</div>
+              </a>{%- endif -%}
+              <a fs-cmsload-element="page-button" href="#" class="pagination-ui-button w-inline-block">
+                <div class="pagination-text w-inline-block">1</div>
+              </a>
+              <div fs-cmsload-element="page-dots" class="pagination-text dots w-inline-block">...</div>
+              {%- if pagination.next.is_link -%}<a href="{{ pagination.next.url }}" aria-label="Next Page" class="w-pagination-next previous-2 next">
+                <div class="pagination-text w-inline-block">Další stránka</div>
+                <div class="icon-embed-xxsmall arrow-right w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+              </a>{%- endif -%}
+              <div aria-label="Page 1 of 1" role="heading" class="w-page-count page-count"></div>
+            </div>
+          </div>

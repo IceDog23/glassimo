@@ -1,0 +1,33 @@
+{% capture listItems %}
+{% paginate collections["stolovani-misy-a-misky-misky"].products by 999 %}
+{%- assign allItems = collections["stolovani-misy-a-misky-misky"].products -%}
+{%- assign shown_labels = '' -%}
+{%- for item in allItems -%}
+  {%- assign refItem = item.metafields.custom.designer.value -%}
+  {%- if refItem.jmeno and refItem.jmeno != '' and refItem.jmeno != nil -%}
+    {%- unless shown_labels contains refItem.jmeno -%}
+      <div role="listitem" class="w-dyn-item">
+        <div class="filters5_item">
+          <label class="w-checkbox filters5_form-checkbox">
+            <div class="w-checkbox-input w-checkbox-input--inputType-custom filters5_form-checkbox1-icon"></div>
+            <input type="checkbox" name="Filter-One-Option-1" id="Filter-One-Option-1" data-name="Filter One Option 1" style="opacity:0;position:absolute;z-index:-1">
+            <span fs-cmsfilter-field="designer" class="text-block-5 w-form-label" for="Filter-One-Option-1">{{ refItem.jmeno }}</span>
+          </label>
+        </div>
+      </div>
+      {%- assign shown_labels = shown_labels | append: refItem.jmeno | append: ',' -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{% endpaginate %}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="w-dyn-list" udy-collection="product">
+                    {%- unless items_length == 0 -%}<div role="list" class="w-dyn-items">
+                      {{ listItems }}
+                    </div>{%- endunless -%}
+                    {%- if items_length == 0 -%}<div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>{%- endif -%}
+                  </div>
