@@ -29,18 +29,16 @@
           {%- if search.results_count > 0 -%}
             <div data-node-type="search-result-list" class="search-result-list">
               {%- for item in search.results -%}
-                <div data-node-type="search-result-item" class="search-result-item">
-                  <a data-node-type="link" class="link-block-4" href="{{ item.url }}">
-                    <img data-node-type="image" class="product-photo" alt="{{ item.title }}" loading="lazy" width="auto" height="auto" src="{{ item | img_url: 'master' }}">
-                    <div data-node-type="block" class="div-block-25">
-                      <div data-node-type="block" class="designer-name">{{ item.metafields.custom.designer.value.jmeno }}</div>
-                      <h1 data-node-type="heading" class="product-name">{{ item.title }}</h1>
-                      <div data-node-type="block" class="price">{{ item.price | money_with_currency }}</div>
-                    </div>
-                    <div data-node-type="block" class="overlay-on-product-4"></div>
-                  </a>
-                </div>
-              {%- endfor -%}
+    {%- assign searchable_content = item.title | append: ' ' | append: item.metafields.custom.designer.value.jmeno | append: ' ' | append: item.metafields.custom.another_metafield.value -%}
+    {%- assign search_matched = searchable_content | search: search.terms -%}
+
+    {%- if search_matched -%}
+        <!-- Your existing code for displaying search results goes here -->
+        <div data-node-type="search-result-item" class="search-result-item">
+            <!-- ... existing code ... -->
+        </div>
+    {%- endif -%}
+{%- endfor -%}
             </div>
           {%- endif -%}
           {%- if search.results_count == 0 -%}
