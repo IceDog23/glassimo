@@ -25,7 +25,7 @@
         <div>{{ 't7635fb4f' | t }}</div>
       </form>
         {%- if search.performed -%}
-        <div data-node-type="search-result-wrapper">
+        <div data-node-type="search-result-wrapper" class="search-result-item">
           {%- if search.results_count > 0 -%}
             <div data-node-type="search-result-list" class="search-result-list">
               {%- for item in search.results -%}
@@ -91,6 +91,27 @@
     // Volitelně můžete pravidelně aktualizovat stav (např. každou minutu)
     setInterval(checkTimeAndDay, 60000);
 });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var searchTerm = '{{ search.terms | escape }}'.toLowerCase();
+
+    var searchResults = document.querySelectorAll('.search-result-item');
+
+    searchResults.forEach(function (result) {
+      var title = result.querySelector('.product-name').innerText.toLowerCase();
+      var designer = result.querySelector('.designer-name').innerText.toLowerCase();
+
+      // Add more variables for other metafields as needed
+
+      if (title.includes(searchTerm) || designer.includes(searchTerm)) {
+        result.style.display = 'block'; // Show the result
+      } else {
+        result.style.display = 'none'; // Hide the result
+      }
+    });
+  });
 </script>
 
 {{ 'udesly-shopify.min.js' | asset_url | script_tag }}
