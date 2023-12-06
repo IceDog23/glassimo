@@ -93,25 +93,4 @@
 });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var searchTerm = '{{ search.terms | escape }}'.toLowerCase();
-
-    var searchResults = document.querySelectorAll('.search-result-item');
-
-    searchResults.forEach(function (result) {
-      var title = result.querySelector('.product-name').innerText.toLowerCase();
-      var designer = result.querySelector('.designer-name').innerText.toLowerCase();
-
-      // Add more variables for other metafields as needed
-
-      if (title.includes(searchTerm) || designer.includes(searchTerm)) {
-        result.style.display = 'block'; // Show the result
-      } else {
-        result.style.display = 'none'; // Hide the result
-      }
-    });
-  });
-</script>
-
 {{ 'udesly-shopify.min.js' | asset_url | script_tag }}
