@@ -29,10 +29,6 @@
           {%- if search.results_count > 0 -%}
             <div data-node-type="search-result-list" class="search-result-list">
               {%- for item in search.results -%}
-                {%- assign searchable_content = item.title | append: ' ' | append: item.metafields.custom.designer.value.jmeno | append: ' ' | append: item.metafields.custom.another_metafield.value -%}
-                {%- assign search_matched = searchable_content | search: search.terms -%}
-
-                {%- if search_matched -%}
                 <div data-node-type="search-result-item" class="search-result-item">
                   <a data-node-type="link" class="link-block-4" href="{{ item.url }}">
                     <img data-node-type="image" class="product-photo" alt="{{ item.title }}" loading="lazy" width="auto" height="auto" src="{{ item | img_url: 'master' }}">
@@ -44,7 +40,6 @@
                     <div data-node-type="block" class="overlay-on-product-4"></div>
                   </a>
                 </div>
-                {%- endif -%}
               {%- endfor -%}
             </div>
           {%- endif -%}
@@ -107,13 +102,10 @@
     searchResults.forEach(function (result) {
       var title = result.querySelector('.product-name').innerText.toLowerCase();
       var designer = result.querySelector('.designer-name').innerText.toLowerCase();
-      var customDesigner = result.getAttribute('data-custom-designer').toLowerCase(); // Adjust the attribute accordingly
 
       // Add more variables for other metafields as needed
-      // For example, you can add another line like:
-      // var anotherMetafield = result.querySelector('.another-metafield-class').innerText.toLowerCase();
 
-      if (title.includes(searchTerm) || designer.includes(searchTerm) || customDesigner.includes(searchTerm)) {
+      if (title.includes(searchTerm) || designer.includes(searchTerm)) {
         result.style.display = 'block'; // Show the result
       } else {
         result.style.display = 'none'; // Hide the result
