@@ -22,7 +22,6 @@
                 <div fs-cmssort-type="date" class="date">{{ item.published_at | date: "%B %e, %Y" }}</div>
               </div>
                         {% endfor %}
-                          {{ paginate | default_pagination }}
                         {%- endpaginate -%}
                         {% endcapture %}
 {% assign items_length = listItems | strip | size %}
