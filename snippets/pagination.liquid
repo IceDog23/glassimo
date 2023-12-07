@@ -14,10 +14,10 @@
     {%- endif -%}
     {%- for part in paginate.parts -%}
       {% if part.is_link %}
-          <span class="page">{{ part.title | link_to: part.url }}</span>
+          <span class="page {% if paginate.current_page %} not-select {% endif %}">{{ part.title | link_to: part.url }}</span>
       {% else %}
         {% if part.title == '&hellip;' %}
-            <span class="page"><a href="#" onclick="return false;">{{ part.title }}</a></span>
+            <span class="page"><a href="#">{{ part.title }}</a></span>
         {% else %}
             <span class="page">{{ part.title | link_to: part.url }}</span>
         {% endif %}
@@ -54,6 +54,7 @@
     .pagination .left-arr, .pagination .right-arr {
       display: flex; 
       align-items: center;
+      opacity: .5
     }
   
     .pagination span.page a {
@@ -67,6 +68,7 @@
       line-height: 96%;
       text-decoration: none;
       display: flex;
+      opacity: 1
     }
   
     .pagination span.next a, .pagination span.previous a {
@@ -78,6 +80,11 @@
       line-height: 96%;
       text-decoration: none;
       display: flex;
+      opacity: 0.5
+  }
+
+  .not-select a {
+    opacity: 0.5!important
   }
   
-  </style>
+</style>
