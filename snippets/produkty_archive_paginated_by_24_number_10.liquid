@@ -1,6 +1,5 @@
 {% capture listItems %}
                         {%- paginate collection.products by 24 -%}
-                        {%- assign pagination = paginate %}
                         {% for item in collection.products %}
                         <div role="listitem" class="product-item w-dyn-item">
                 <div class="add-to-cart">
@@ -24,33 +23,18 @@
                 <div fs-cmssort-type="date" class="date">{{ item.published_at | date: "%B %e, %Y" }}</div>
               </div>
                         {% endfor %}
+                        {% capture pagination %}
+                        {% render 'pagination', paginate: paginate %}
+                      {% endcapture %} 
                         {%- endpaginate -%}
                         {% endcapture %}
 {% assign items_length = listItems | strip | size %}
     <div id="w-node-_12a1bcc6-7c3d-3d6d-3d4d-50e8c9420d88-ed9d3929" class="product-list-wrapper w-dyn-list" udy-collection="product">
             {%- unless items_length == 0 -%}<div fs-cmsload-mode="pagination" class="product-list w-dyn-items" fs-cmsfilter-element="list" role="list" fs-cmssort-element="list" fs-cmsload-pagesiblings="2" fs-cmsload-element="list" fs-cmsfilter-showquery="true">
               {{ listItems }}
-            </div>{%- endunless -%}
+            </div>
+            {{ pagination }}
+          {%- endunless -%}
             {%- if items_length == 0 -%}<div class="w-dyn-empty">
               <div>No items found.</div>
             </div>{%- endif -%}
-            <div role="navigation" aria-label="List" class="w-pagination-wrapper pagination-4">
-              {%- if pagination.previous.is_link -%}<a href="{{ pagination.previous.url }}" aria-label="Previous Page" class="w-pagination-previous previous-2">
-                <div class="icon-embed-xxsmall arrow-right pagination w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
-                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg></div>
-                <div class="pagination-text w-inline-block">Předchozí stránka</div>
-              </a>{%- endif -%}
-              <a fs-cmsload-element="page-button" href="#" class="pagination-ui-button w-inline-block">
-                <div class="pagination-text w-inline-block">1</div>
-              </a>
-              <div fs-cmsload-element="page-dots" class="pagination-text dots w-inline-block">...</div>
-              {%- if pagination.next.is_link -%}<a href="{{ pagination.next.url }}" aria-label="Next Page" class="w-pagination-next previous-2 next">
-                <div class="pagination-text w-inline-block">Další stránka</div>
-                <div class="icon-embed-xxsmall arrow-right w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
-                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg></div>
-              </a>{%- endif -%}
-              <div aria-label="Page 1 of 1" role="heading" class="w-page-count page-count"></div>
-            </div>
-          </div>
