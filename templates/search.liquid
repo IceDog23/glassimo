@@ -16,6 +16,9 @@
             </div>
             <div class="subpage-hero-grid">
                 <h1 id="w-node-_993e1c7e-230f-524a-eabb-1128f6779217-64485243" class="heading-3 h1 black">{{ 't6ba0fece' | t }}</h1>
+                <!-- Your actual hero section code here -->
+                <!-- Add the rest of your hero section code here -->
+                <!-- For example, you can add more HTML, Liquid, or other elements here -->
             </div>
         </div>
     </div>
@@ -28,6 +31,7 @@
 <section>
     <div class="section-wrapper">
         <form action="/search" class="search-2 w-form" method="get" role="search">
+            <!-- Your existing search form code -->
             <input type="search" class="w-input" maxlength="256" name="q" placeholder="{{ 'tn2774f8a2' | t }}" id="search" required="">
             <input type="submit" value="{{ 'tn6ca0ae38' | t }}" class="w-button">
             <div>{{ 't7635fb4f' | t }}</div>
@@ -37,7 +41,8 @@
         <div data-node-type="search-result-wrapper" class="">
             {%- if search.results_count > 0 -%}
             <div data-node-type="search-result-list" class="search-result-list">
-                {%- for item in search.results -%}
+                {%- assign display_results = search.results | reverse -%}
+                {%- for item in display_results -%}
                 <div data-node-type="search-result-item" class="search-result-item">
                     <a data-node-type="link" class="link-block-4" href="{{ item.url }}">
                         <img data-node-type="image" class="product-photo" alt="{{ item.title }}" loading="lazy" width="auto" height="auto" src="{{ item | img_url: 'master' }}">
@@ -50,10 +55,6 @@
                     </a>
                 </div>
                 {%- endfor -%}
-            </div>
-
-            <div id="loadMoreContainer">
-                <button id="loadMoreButton">Load More Results</button>
             </div>
             {%- endif -%}
 
@@ -75,26 +76,5 @@
 </div>
 
 {%- section 'footer' -%}
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var page = 2; // initialize page counter
-
-        $('#loadMoreButton').on('click', function () {
-            // perform an AJAX request to fetch more results
-            $.ajax({
-                url: '/search',
-                data: { q: '{{ search.terms }}', page: page },
-                type: 'GET',
-                success: function (data) {
-                    // append new results to the existing list
-                    $('.search-result-list').append(data);
-                    page++; // increment page counter
-                }
-            });
-        });
-    });
-</script>
 
 {{ 'udesly-shopify.min.js' | asset_url | script_tag }}
