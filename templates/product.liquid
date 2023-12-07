@@ -18,14 +18,7 @@
         <div id="w-node-_1934c572-3056-1c63-5275-29ce5d34ef6e-8fc70baa" class="product-description">
           <div class="text-wrapper">
             <div class="link-page-wrapper">
-                <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var backButton = document.createElement('a');
-      backButton.innerHTML = 'Back';
-      backButton.setAttribute('href', 'javascript:history.go(-1)');
-      document.body.appendChild(backButton);
-    });
-  </script>
+              <button onclick="history.go(-1)">Click here to back to previous page</button>
             </div>
           </div>
           <div data-commerce-type="variation-price" class="price-text">{{ product.price | money_with_currency }}</div>
