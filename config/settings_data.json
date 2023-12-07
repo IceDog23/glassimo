@@ -18,10 +18,19 @@
               "background_slider": "shopify:\/\/shop_images\/Background.png",
               "link_na_kolekci": "shopify:\/\/collections\/vazy"
             }
+          },
+          "87efd50f-ec6c-4b2b-8faf-21fe1bbf1ba7": {
+            "type": "slide",
+            "settings": {
+              "nazev_kolekce": "Vánoční inspirace — nechte se inpirovat našimi tipy na krásné dárky",
+              "background_slider": "shopify:\/\/shop_images\/Background2.png",
+              "link_na_kolekci": "shopify:\/\/collections\/objekty"
+            }
           }
         },
         "block_order": [
-          "f0b5d8b0-ad1f-454f-afb4-690c8a783650"
+          "f0b5d8b0-ad1f-454f-afb4-690c8a783650",
+          "87efd50f-ec6c-4b2b-8faf-21fe1bbf1ba7"
         ],
         "settings": {
         }
