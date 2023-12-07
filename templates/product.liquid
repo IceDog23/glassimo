@@ -109,6 +109,10 @@
   <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript" defer></script>
   <style>
   body { -webkit-font-smoothing: antialiased; }
+
+  .mobile-img {
+    max-height: 800px!important;
+  }
 </style>
   <script>
 document.querySelectorAll('[data-class="find-swatch"]').forEach(el => el.className = "color-swatch " + el.className);
