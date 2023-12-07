@@ -16,6 +16,7 @@
             "settings": {
               "nazev_kolekce": "Vánoční inspirace —  nechte se inspirovat našimi tipy na krásné dárky",
               "background_slider": "shopify:\/\/shop_images\/Background.png",
+              "cta": "Zobrazit vázy",
               "link_na_kolekci": "shopify:\/\/collections\/vazy"
             }
           },
@@ -24,6 +25,7 @@
             "settings": {
               "nazev_kolekce": "Vánoční inspirace — nechte se inpirovat našimi tipy na krásné dárky",
               "background_slider": "shopify:\/\/shop_images\/Background2.png",
+              "cta": "Zobrazit objekty",
               "link_na_kolekci": "shopify:\/\/collections\/objekty"
             }
           },
@@ -32,6 +34,7 @@
             "settings": {
               "nazev_kolekce": "Vánoční inspirace — nechte se inspirovat našimi tipy na krásné dárky",
               "background_slider": "shopify:\/\/shop_images\/Background3.png",
+              "cta": "Zobrazit mísy a misky",
               "link_na_kolekci": "shopify:\/\/collections\/misy-a-misky"
             }
           }
