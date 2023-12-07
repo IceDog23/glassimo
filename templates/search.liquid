@@ -1,12 +1,6 @@
 {%- assign headerSnippetPath = "header-search" -%}{%- assign wfPage = "653981bba66d4b9e64485243" -%}{%- assign bodyClasses = "" -%}
   {%- section 'custom_marquee_2' -%}
   {%- render 'navigation-1' -%}
-
-{% if search.performed %}
-  <H1>Search results for "{{ search.terms }}" - {{ shop.name }}</H1>
-{% else %}
-  <H1>{{ page_title }} - {{ shop.name }}</H1>
-{% endif %}
   
   <section class="hero-subpage">
     <div class="section-wrapper in-hero-subpage">
@@ -18,7 +12,7 @@
           <div class="link-page-text">{{ 'tn1f50f1ac' | t }}</div>
         </div>
         <div class="subpage-hero-grid">
-          <h1 id="w-node-_993e1c7e-230f-524a-eabb-1128f6779217-64485243" class="heading-3 h1 black">{{ 't6ba0fece' | t }}</h1>
+          <h1 id="w-node-_993e1c7e-230f-524a-eabb-1128f6779217-64485243" class="heading-3 h1 black">{{ 't6ba0fece' | t }} pro "{{ search.terms }}"</h1>
         </div>
       </div>
     </div>
