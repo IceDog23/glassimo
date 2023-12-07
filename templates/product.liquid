@@ -34,7 +34,13 @@
           </div>
           {% assign refs = product.metafields.custom.designer.value | map: "handle" %}{%- if refs.size > 0 -%}<div collection-metafield="product.metafields.custom['designer'].value" class="designer-in-product-link">
             {%- assign refItem = product.metafields.custom.designer.value -%}<a href="{{ refItem.system.url }}" class="designer-link-photo w-inline-block">
-              <div class="designer-img-wrapper in-product">{%- assign refItem = product.metafields.custom.designer.value -%}<img alt="" loading="lazy" src="{{ refItem.hlavni_fotka | img_url: 'master' }}" class="designer-photo"></div>
+              <div class="designer-img-wrapper in-product">{%- assign refItem = product.metafields.custom.designer.value -%}
+                {% if refItem.profile_photo %}
+                  <img alt="" loading="lazy" src="{{ refItem.profile_photo | img_url: 'master' }}" class="designer-photo">
+                {% else %}
+                  <img alt="" loading="lazy" src="{{ refItem.hlavni_fotka | img_url: 'master' }}" class="designer-photo">
+                {% endif %}
+              </div>
               <div class="designer-name-in-product">
                 <div class="text-designer">{{ 't6ba656e7' | t }}</div>
                 {%- assign refItem = product.metafields.custom.designer.value -%}<div class="name-designer">{{ refItem.jmeno }}</div>
