@@ -1,6 +1,7 @@
 {
   "current": {
     "collection_home": "pomocne-kolekce-oblibene-na-uvodni-strance",
+    "collection_home_limit": 4,
     "collection_2_stolovn_limit": 4,
     "sections": {
       "custom_marquee": {
