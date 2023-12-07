@@ -26,11 +26,20 @@
               "background_slider": "shopify:\/\/shop_images\/Background2.png",
               "link_na_kolekci": "shopify:\/\/collections\/objekty"
             }
+          },
+          "64b4424b-c688-4661-8e72-31a3d7fb6617": {
+            "type": "slide",
+            "settings": {
+              "nazev_kolekce": "Vánoční inspirace — nechte se inspirovat našimi tipy na krásné dárky",
+              "background_slider": "shopify:\/\/shop_images\/Background3.png",
+              "link_na_kolekci": "shopify:\/\/collections\/misy-a-misky"
+            }
           }
         },
         "block_order": [
           "f0b5d8b0-ad1f-454f-afb4-690c8a783650",
-          "87efd50f-ec6c-4b2b-8faf-21fe1bbf1ba7"
+          "87efd50f-ec6c-4b2b-8faf-21fe1bbf1ba7",
+          "64b4424b-c688-4661-8e72-31a3d7fb6617"
         ],
         "settings": {
         }
