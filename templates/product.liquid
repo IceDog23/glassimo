@@ -3,7 +3,7 @@
     {%- render 'alternative_nav' -%}
     <div class="hero-product-page-wrapper">
       <div id="w-node-_7820fbdf-b593-6d6a-683f-49037a02bc2d-8fc70baa" class="product-imgs-flex">
-        <img alt="{{ product.title }}" loading="lazy" src="{{ product.featured_image | img_url: 'master' }}" class="image-7" data-commerce-type="variation-image" srcset="{{ product.featured_image | img_url: '1920x' }} 1920w,{{ product.featured_image | img_url: '1600x' }} 1600w,{{ product.featured_image | img_url: '1366x' }} 1366w,{{ product.featured_image | img_url: '1024x' }} 1024w,{{ product.featured_image | img_url: '768x' }} 768w,{{ product.featured_image | img_url: '640x' }} 640w">
+        <img alt="{{ product.title }}" src="{{ product.featured_image | img_url: 'master' }}" class="image-7" data-commerce-type="variation-image" srcset="{{ product.featured_image | img_url: '1920x' }} 1920w,{{ product.featured_image | img_url: '1600x' }} 1600w,{{ product.featured_image | img_url: '1366x' }} 1366w,{{ product.featured_image | img_url: '1024x' }} 1024w,{{ product.featured_image | img_url: '768x' }} 768w,{{ product.featured_image | img_url: '640x' }} 640w">
         <a href="#" class="lightbox-link w-inline-block w-lightbox"><img loading="lazy" src="{{ product.metafields.udesly['variacni-fotka-produktu'].src }}" alt="" class="image-6">
           {% comment %} <script type="application/json" class="w-json">{"items":[{% for image in product.images %}{"caption":"","url":"{{ image | product_img_url: 'master' }}","type":"image"}{% unless forloop.last %},{% endunless %}{% endfor %}],"group":"Product {{ product.id }} images"}</script> {% endcomment %}
           {% for image in product.images %}
