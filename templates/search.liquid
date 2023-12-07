@@ -23,7 +23,7 @@
       <form action="/search" class="search-2 w-form" method="get" role="search"><input type="search" class="w-input" maxlength="256" name="q" placeholder="{{ 'tn2774f8a2' | t }}" id="search" required=""><input type="submit" value="{{ 'tn6ca0ae38' | t }}" class="w-button">
         <div>{{ 't7635fb4f' | t }}</div>
       </form>
-      {% paginate search.results by 24 %}
+      {% paginate search.results by 124 %}
         {%- if search.performed -%}
         <div data-node-type="search-result-wrapper" class="">
           {%- if search.results_count > 0 -%}
