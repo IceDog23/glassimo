@@ -45,7 +45,7 @@
                 <h1 class="heading h1">{{ block.settings.nazev_kolekce | newline_to_br }}</h1>
                 <a href="{{ block.settings.link_na_kolekci }}" class="cta-in-hero w-inline-block">
                   <div class="call-to-action-homepage">
-                    Do kolekce
+                    {{ block.settings.cta }}
                   </div>
                 </a>
               </div>
@@ -132,6 +132,11 @@
           "type": "image_picker",
           "id": "background_slider",
           "label": "background-slider"
+        },
+        {
+          "type": "textarea",
+          "id": "cta",
+          "label": "cta"
         },
         {
           "type": "url",
