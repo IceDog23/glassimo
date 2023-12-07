@@ -6,13 +6,13 @@
         {% comment %} <img alt="{{ product.title }}" src="{{ product.featured_image | img_url: 'master' }}" class="image-7" data-commerce-type="variation-image" srcset="{{ product.featured_image | img_url: '1920x' }} 1920w,{{ product.featured_image | img_url: '1600x' }} 1600w,{{ product.featured_image | img_url: '1366x' }} 1366w,{{ product.featured_image | img_url: '1024x' }} 1024w,{{ product.featured_image | img_url: '768x' }} 768w,{{ product.featured_image | img_url: '640x' }} 640w"> {% endcomment %}
         {% comment %} <a href="#" class="lightbox-link w-inline-block w-lightbox"><img loading="lazy" src="{{ product.metafields.udesly['variacni-fotka-produktu'].src }}" alt="" class="image-6"> {% endcomment %}
           {% comment %} <script type="application/json" class="w-json">{"items":[{% for image in product.images %}{"caption":"","url":"{{ image | product_img_url: 'master' }}","type":"image"}{% unless forloop.last %},{% endunless %}{% endfor %}],"group":"Product {{ product.id }} images"}</script> {% endcomment %}
-          {{ product.featured_image | image_url: width: 768 | image_tag: preload: true}}
+          {{ product.featured_image | image_url: width: 768 | image_tag: preload: true }}
           {% for image in product.images offset: 1 %}
             {% comment %} {{ image.src | image_url: width: 1920 | image_tag }} {% endcomment %}
             {{ image | image_url: width: 768 | image_tag: loading: 'lazy' }}
             {% comment %} <img alt="{{ product.title }}" src="{{ image.src | img_url: 'master' }}" class="image-7" data-commerce-type="variation-image" srcset="{{ image.src | img_url: '1920x' }} 1920w,{{ image.src | img_url: '1600x' }} 1600w,{{ image.src | img_url: '1366x' }} 1366w,{{ image.src | img_url: '1024x' }} 1024w,{{ image.src | img_url: '768x' }} 768w,{{ image.src | img_url: '640x' }} 640w">  {% endcomment %}
           {% endfor %}
-        </a>
+        <!-- </a> -->
       </div>
       <div id="w-node-dcb04925-c56e-556c-a978-90a5a726bac1-8fc70baa" class="product-description-wrapper">
         <div id="w-node-_1934c572-3056-1c63-5275-29ce5d34ef6e-8fc70baa" class="product-description">
