@@ -4,7 +4,11 @@
 {%- for item in allItems limit: 9 -%}
  <div id="w-node-_734f3e71-fff5-c3cf-0a10-cef5b1eff483-0cad2175" role="listitem" class="designer-item w-dyn-item">
             <a href="{{ item.system.url }}" class="designer-link-photo w-inline-block">
-              <div class="designer-img-wrapper"><img alt="{{ item.jmeno }}" loading="lazy" src="{{ item.hlavni_fotka | img_url: 'master' }}" class="designer-photo"></div>
+              {% if item.profile_photo %}
+                <div class="designer-img-wrapper"><img alt="{{ item.jmeno }}" loading="lazy" src="{{ item.profile_photo | img_url: 'master' }}" class="designer-photo"></div>
+              {% else %}
+                <div class="designer-img-wrapper"><img alt="{{ item.jmeno }}" loading="lazy" src="{{ item.hlavni_fotka | img_url: 'master' }}" class="designer-photo"></div>
+              {% endif %}
             </a>
             <div class="designer-name-in-list">{{ item.jmeno }}</div>
           </div>
