@@ -18,13 +18,14 @@
         <div id="w-node-_1934c572-3056-1c63-5275-29ce5d34ef6e-8fc70baa" class="product-description">
           <div class="text-wrapper">
             <div class="link-page-wrapper">
-              <a href= {{ collections.all.url }} class="page-link w-inline-block">
-                <div class="text-page-link">{{ 'tn37f9ac6e' | t }}</div>
-              </a>
-              <a href="#" class="page-link active-site-link w-inline-block">
-                <div class="link-page-text">{{ 't2f' | t }}</div>
-                <div class="text-page-link active-page-text">{{ product.title }}</div>
-              </a>
+                <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var backButton = document.createElement('a');
+      backButton.innerHTML = 'Back';
+      backButton.setAttribute('href', 'javascript:history.go(-1)');
+      document.body.appendChild(backButton);
+    });
+  </script>
             </div>
           </div>
           <div data-commerce-type="variation-price" class="price-text">{{ product.price | money_with_currency }}</div>
