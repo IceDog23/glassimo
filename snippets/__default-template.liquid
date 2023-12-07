@@ -5,18 +5,9 @@
   Customize the content and structure according to your theme's requirements.
 {%- endcomment -%}
 
-<!DOCTYPE html>
-<html lang="{{ shop.locale }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page_title }}</title>
-  {{ content_for_header }}
-</head>
-<body>
-  <header>
-    <!-- Your header content goes here -->
-  </header>
+{%- assign headerSnippetPath = "header-search" -%}{%- assign wfPage = "65590ea45dae3bf0289a7ea1" -%}{%- assign bodyClasses = "" -%}
+  {%- section 'custom_marquee' -%}
+  {%- render 'navigation-1' -%}
 
   <main role="main">
     {{ content_for_layout }}
