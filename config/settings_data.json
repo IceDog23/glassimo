@@ -1,1 +1,64 @@
-{"current":{"sections":{"custom_marquee":{"type":"custom_marquee","settings":{"marquee_text_italic":"Nový web","marquee_text_plain":"Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"}},"slider-options":{"type":"slider-options","blocks":{"f0b5d8b0-ad1f-454f-afb4-690c8a783650":{"type":"slide","settings":{"nazev_kolekce":"Vánoční inspirace —  nechte se inspirovat našimi tipy na krásné dárky","background_slider":"shopify:\/\/shop_images\/Background.png","link_na_kolekci":"shopify:\/\/collections\/vazy"}}},"block_order":["f0b5d8b0-ad1f-454f-afb4-690c8a783650"],"settings":{}},"footer":{"type":"footer","custom_css":[".text-span {column-count: auto; font-family: Sigurd, sans-serif; font-size: 2rem; font-weight: 300;}"],"settings":{"odkaz":"shopify:\/\/pages\/obchodni-podminky-a-reklamacni-rad","odkaz_na_dal_strnku":"shopify:\/\/pages\/zasady-ochrany-osobnich-udaju"}},"custom_marquee_2":{"type":"custom_marquee_2","settings":{"marquee_text_italic":"Nový web","marquee_text_plain":"Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"}},"o-nas-background":{"type":"o-nas-background","settings":{"fotka_onas_bckg":"shopify:\/\/shop_images\/Picture_1.png"}},"rich-text-o-nas":{"type":"rich-text-o-nas","settings":{"richtext_o_nas_1":"","richtext_o_nas_2":""}}},"content_for_index":[]}}
+{
+  "current": {
+    "sections": {
+      "custom_marquee": {
+        "type": "custom_marquee",
+        "settings": {
+          "marquee_text_italic": "Nový web",
+          "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
+        }
+      },
+      "slider-options": {
+        "type": "slider-options",
+        "blocks": {
+          "f0b5d8b0-ad1f-454f-afb4-690c8a783650": {
+            "type": "slide",
+            "settings": {
+              "nazev_kolekce": "Vánoční inspirace —  nechte se inspirovat našimi tipy na krásné dárky",
+              "background_slider": "shopify:\/\/shop_images\/Background.png",
+              "link_na_kolekci": "shopify:\/\/collections\/vazy"
+            }
+          }
+        },
+        "block_order": [
+          "f0b5d8b0-ad1f-454f-afb4-690c8a783650"
+        ],
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "custom_css": [
+          ".text-span {column-count: auto; font-family: Sigurd, sans-serif; font-size: 2rem; font-weight: 300;}"
+        ],
+        "settings": {
+          "odkaz": "shopify:\/\/pages\/obchodni-podminky-a-reklamacni-rad",
+          "odkaz_na_dal_strnku": "shopify:\/\/policies\/privacy-policy"
+        }
+      },
+      "custom_marquee_2": {
+        "type": "custom_marquee_2",
+        "settings": {
+          "marquee_text_italic": "Nový web",
+          "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
+        }
+      },
+      "o-nas-background": {
+        "type": "o-nas-background",
+        "settings": {
+          "fotka_onas_bckg": "shopify:\/\/shop_images\/Picture_1.png"
+        }
+      },
+      "rich-text-o-nas": {
+        "type": "rich-text-o-nas",
+        "settings": {
+          "richtext_o_nas_1": "",
+          "richtext_o_nas_2": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
