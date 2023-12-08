@@ -2,19 +2,6 @@
   {%- section 'custom_marquee' -%}
   {%- render 'navigation-1' -%}
 
-<form action="{{ collection.url }}" method="get" class="collection-sorting">
-  <label for="sort-by">Sort by:</label>
-  <select id="sort-by" name="sort_by">
-    <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Featured</option>
-    <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Best Selling</option>
-    <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected="selected"{% endif %}>Alphabetically, A-Z</option>
-    <option value="title-descending" {% if collection.sort_by == 'title-descending' %}selected="selected"{% endif %}>Alphabetically, Z-A</option>
-    <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Date, old to new</option>
-    <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Date, new to old</option>
-  </select>
-  <input type="submit" value="Sort">
-</form>
-
 <form>
   {%- for filter in collection.filters -%}
     <details>
@@ -212,6 +199,20 @@
   <div class="divider in-decor below-filters">
     <div class="divider-line"></div>
   </div>
+  
+<form action="{{ collection.url }}" method="get" class="collection-sorting">
+  <label for="sort-by">Sort by:</label>
+  <select id="sort-by" name="sort_by">
+    <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Featured</option>
+    <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Best Selling</option>
+    <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected="selected"{% endif %}>Alphabetically, A-Z</option>
+    <option value="title-descending" {% if collection.sort_by == 'title-descending' %}selected="selected"{% endif %}>Alphabetically, Z-A</option>
+    <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Date, old to new</option>
+    <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Date, new to old</option>
+  </select>
+  <input type="submit" value="Sort">
+</form>
+
   <section class="product-sections">
     <div class="section-wrapper in-decor">
       <div class="filters5_layout">
