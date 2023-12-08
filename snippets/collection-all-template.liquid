@@ -199,7 +199,8 @@
   <div class="divider in-decor below-filters">
     <div class="divider-line"></div>
   </div>
-  
+
+  <div class="filtering">
 <form action="{{ collection.url }}" method="get" class="collection-sorting">
   <select id="sort-by" name="sort_by">
     <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
@@ -211,6 +212,7 @@
   </select>
   <input type="submit" value="Sort">
 </form>
+  </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
