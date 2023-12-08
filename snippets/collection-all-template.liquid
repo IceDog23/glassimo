@@ -200,17 +200,41 @@
     <div class="divider-line"></div>
   </div>
   
-<form action="{{ collection.url }}" method="get" class="collection-sorting">
+<form action="{{ collection.url }}" method="get" class="collection-sorting" id="sort-form">
   <select id="sort-by" name="sort_by">
-    <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
-    <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Nejprodávanější</option>
-    <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Od nejstaršího</option>
-    <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Od nejnovějšího</option>
-    <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
-    <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
+    <option value="manual">Výchozí</option>
+    <option value="best-selling">Nejprodávanější</option>
+    <option value="created-ascending">Od nejstaršího</option>
+    <option value="created-descending">Od nejnovějšího</option>
+    <option value="price-ascending">Cena od nejlevnějšího</option>
+    <option value="price-descending">Cena od nejdražšího</option>
   </select>
-  <input type="submit" value="Sort">
+  <input type="button" value="Sort" onclick="applySorting()">
 </form>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function applySorting() {
+    var selectedSort = $('#sort-by').val();
+    var collectionUrl = '{{ collection.url }}';
+
+    // Use AJAX to send a request to the server
+    $.ajax({
+      url: collectionUrl,
+      type: 'GET',
+      data: { sort_by: selectedSort },
+      success: function(data) {
+        // Update the content on the page without a full page reload
+        // Note: This assumes that your theme supports dynamic content updates
+        // You may need to adjust this part based on your theme's structure
+        $('body').html(data);
+      },
+      error: function(error) {
+        console.error('Error applying sorting:', error);
+      }
+    });
+  }
+</script>
 
   <section class="product-sections">
     <div class="section-wrapper in-decor">
