@@ -204,13 +204,6 @@
 
 {% assign collection_handle = 'your-collection-handle' %}
 {% assign collection = collections[collection_handle] %}
-
-{% if collection %}
-  <p>Number of products displayed on this page: {{ collection.products.size }}</p>
-  <p>Total number of products in '{{ collection.title }}' collection: {{ collection.all_products_count }}</p>
-{% else %}
-  <p>Collection not found</p>
-{% endif %}
   
   <div class="filtering">
 <form action="{{ collection.url }}" method="get" class="collection-sorting">
