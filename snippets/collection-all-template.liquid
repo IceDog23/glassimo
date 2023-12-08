@@ -200,7 +200,7 @@
     <div class="divider-line"></div>
   </div>
   
-<form action="{{ collection.url }}" method="get" class="collection-sorting">
+<form action="{{ collection.url }}" method="get" class="collection-sorting" id="sorting-form">
   <select id="sort-by" name="sort_by">
     <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
     <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Nejprodávanější</option>
@@ -209,8 +209,15 @@
     <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
     <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
   </select>
-  <input type="submit" value="Sort">
+  <button type="button" onclick="updateSorting()">Sort</button>
 </form>
+
+<script>
+  function updateSorting() {
+    var form = document.getElementById('sorting-form');
+    form.submit(); // or use AJAX to dynamically update the content without a full page reload
+  }
+</script>
 
   <section class="product-sections">
     <div class="section-wrapper in-decor">
