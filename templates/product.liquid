@@ -25,7 +25,41 @@
           <div class="name-product">{{ product.title }}</div>
           <p class="product-description in-product">{{ product.description }}</p>
           <div>
-            {%- form "product", product, data-node-type: "commerce-add-to-cart-form", class: "w-commerce-commerceaddtocartform" -%}{%- unless product.has_only_default_variant or product.variants.size == 1 -%}<div data-node-type="add-to-cart-option-list" position-id="fa47fd58-cd45-92c4-46c8-e3076aa6d52d">{%- for option in product.options_with_values -%}<fieldset data-node-type="add-to-cart-option" style="{% if product.has_only_default_variant or product.variants.size == 1 %}display: none; {% endif %}"><label data-node-type="add-to-cart-option-label" class="field-label-3">{{ option.name }}</label><select data-node-type="add-to-cart-option-select" class="w-select" style="display: none;" name="{{ "option" | append: forloop.index }}">{%- render "product-options", option: option -%}</select><div data-node-type="add-to-cart-option-pill-group" class="button-group w-commerce-commerceaddtocartoptionpillgroup" aria-label="{{ "option" | append: forloop.index  }}">{%- for value in option.values -%}<div data-node-type="add-to-cart-option-pill" class="color-button w-commerce-commerceaddtocartoptionpill" data-option-name="{{ value | handle }}">{%- if option.name == 'Barva' -%}<div data-node-type="block" class="color-swatch {{ value | handle }}" data-class="find-swatch"></div>{%- endif -%}<div data-node-type="block" class="text-block-5">{{ value }}</div></div>{%- endfor -%}</div></fieldset>{%- endfor -%}</div>{%- endunless -%}{%- assign condition_value = product.type | strip -%}{%- unless condition_value == "e348fd487d0102946c9179d2a94bb613" -%}<label for="quantity-d027b83e876ddb45ebe9cfafa6fd05ed" position-id="fa47fd58-cd45-92c4-46c8-e3076aa6d534" class="field-label w-password-page">{{ 'tn48bd3755' | t }}</label>{%- endunless -%}{%- assign condition_value = product.type | strip -%}{%- unless condition_value == "e348fd487d0102946c9179d2a94bb613" -%}<input type="number" pattern="^[0-9]+$" inputmode="numeric" id="quantity-d027b83e876ddb45ebe9cfafa6fd05ed" name="quantity" min="1" position-id="fa47fd58-cd45-92c4-46c8-e3076aa6d536" class="w-commerce-commerceaddtocartquantityinput quantity" value="1">{%- endunless -%}<input type="submit" position-id="fa47fd58-cd45-92c4-46c8-e3076aa6d537" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." value="{{ 'tn5ff77d1a' | t }}" aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton add-to-cart-button">{%- render "product-variants-data-currency" product: product -%}{%- endform -%}
+{%- form "product", product, data-node-type: "commerce-add-to-cart-form", class: "w-commerce-commerceaddtocartform", id: "product-form" -%}
+  <div id="variant-picker">
+    <label for="variant-select">Select Variant:</label>
+    <select id="variant-select" name="variant">
+      {% for variant in product.variants %}
+        <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  {%- unless product.has_only_default_variant or product.variants.size == 1 -%}
+    <div data-node-type="add-to-cart-option-list" class="option-list" position-id="239fa3ea-d103-2113-45c9-4d8c4267b0eb">
+      {%- for option in product.options_with_values -%}
+        <fieldset data-node-type="add-to-cart-option" style="{% if product.has_only_default_variant or product.variants.size == 1 %}display: none; {% endif %}">
+          <label data-node-type="add-to-cart-option-label">{{ option.name }}</label>
+          <select data-node-type="add-to-cart-option-select" class="w-select" style="display: none;" name="{{ "option" | append: forloop.index }}">
+            {%- render "product-options", option: option -%}
+          </select>
+          <div data-node-type="add-to-cart-option-pill-group" class="w-commerce-commerceaddtocartoptionpillgroup" aria-label="{{ "option" | append: forloop.index }}">
+            {%- for value in option.values -%}
+              <div data-node-type="add-to-cart-option-pill" class="w-commerce-commerceaddtocartoptionpill" data-option-name="{{ value | handle }}">
+                <div data-node-type="block">{{ value }}</div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </fieldset>
+      {%- endfor -%}
+    </div>
+  {%- endunless -%}
+
+  <label for="quantity-d027b83e876ddb45ebe9cfafa6fd05ed" position-id="239fa3ea-d103-2113-45c9-4d8c4267b0f2" class="field-label-11 w-password-page">{{ 'tn48bd3755' | t }}</label>
+  <input type="number" pattern="^[0-9]+$" inputmode="numeric" id="quantity-d027b83e876ddb45ebe9cfafa6fd05ed" name="quantity" min="1" position-id="239fa3ea-d103-2113-45c9-4d8c4267b0f4" class="w-commerce-commerceaddtocartquantityinput quantity-6" value="1">
+
+  <input type="submit" position-id="239fa3ea-d103-2113-45c9-4d8c4267b0f5" data-node-type="commerce-add-to-cart-button" data-loading-text="Přidávání do košíku..." value="{{ 'tn5ff77d1a' | t }}" aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton add-to-cart-button-3">
+{%- endform -%}
           </div>
           {% assign refs = product.metafields.custom.designer.value | map: "handle" %}{%- if refs.size > 0 -%}<div collection-metafield="product.metafields.custom['designer'].value" class="designer-in-product-link">
             {%- assign refItem = product.metafields.custom.designer.value -%}<a href="{{ refItem.system.url }}" class="designer-link-photo w-inline-block">
@@ -142,5 +176,32 @@ document.querySelectorAll('[data-class="find-swatch"]').forEach(el => el.classNa
     setInterval(checkTimeAndDay, 60000);
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById('product-form');
+  var variantSelect = document.getElementById('variant-select');
+
+  variantSelect.addEventListener('change', function() {
+    // Set the selected variant ID as the value for the 'variant' input in the form
+    form.querySelector('[name="variant"]').value = this.value;
+  });
+
+  form.addEventListener('submit', function(event) {
+    // Prevent the form submission
+    event.preventDefault();
+
+    // You can add additional logic here before submitting the form
+    // For example, you might want to check if a variant is selected
+
+    // Submit the form
+    Shopify.post('/cart/add.js', {
+      quantity: form.querySelector('[name="quantity"]').value,
+      id: form.querySelector('[name="variant"]').value
+    });
+  });
+});
+</script>
+
 
 {{ 'udesly-shopify.min.js' | asset_url | script_tag }}
