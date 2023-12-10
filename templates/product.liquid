@@ -42,6 +42,32 @@
               </div>
             </a>
           </div>{%- endif -%}
+
+
+<div id="variant-picker">
+  <label for="variant-select">Select Variant:</label>
+  <select id="variant-select" name="variant">
+    {% for variant in product.variants %}
+      <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<script>
+  // Add this script to update the product variant when the user selects an option
+  document.getElementById('variant-select').addEventListener('change', function() {
+    var selectedVariantId = this.value;
+    var selectedVariant = product.variants.find(function(variant) {
+      return variant.id == selectedVariantId;
+    });
+
+    if (selectedVariant) {
+      document.getElementById('product-price').innerText = selectedVariant.price | money;
+      // You can add more code here to update other elements based on the selected variant
+    }
+  });
+</script>
+          
           <div class="accordition-wrapper">
             <div class="accordion">
               <div data-w-id="482927d1-59e4-d907-fdc5-1227d20ed310" class="description-value">
