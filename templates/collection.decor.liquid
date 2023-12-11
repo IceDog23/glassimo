@@ -76,41 +76,38 @@
   <div fs-cmsload-element="scroll-anchor" class="divider in-decor">
     <div class="divider-line"></div>
   </div>
+
+<!-- Sorting -->
+<div class="main-container">
+  <div class="filtering">
+    <form action="{{ collection.url }}" method="get" class="collection-sorting">
+      <select id="sort-by" name="sort_by">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
+        <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Od nejstaršího</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Od nejnovějšího</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
+      </select>
+      <input type="submit" value="Sort">
+    </form>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var select = document.getElementById('sort-by');
+
+    select.addEventListener('change', function() {
+      var form = document.querySelector('.collection-sorting');
+      form.submit();
+    });
+  });
+</script>
+  
   <section class="product-sections">
     <div class="section-wrapper in-decor">
       <h2>{{ 'tn1a659f18' | t }}</h2>
       <div class="filters5_layout jinak uplnejinak">
         <div class="filter-wrapper">
-          <div class="w-layout-grid filters5_feed-header-top-6">
-            <div id="w-node-_3f82433c-299f-757b-e6c1-4ff965a836fd-6336a057" class="filters5_category-menu no-scrollbar">
-              <a href="#" class="filters5_menu-link-4 current w-inline-block">
-                <div>{{ 't4b09c9c6' | t }}</div>
-              </a>
-              <a href="#" class="filters5_menu-link-4 w-inline-block">
-                <div>{{ 't231b9c64' | t }}</div>
-              </a>
-              <a href="#" class="filters5_menu-link-4 w-inline-block">
-                <div>{{ 't231bb04a' | t }}</div>
-              </a>
-              <a href="#" class="filters5_menu-link-4 w-inline-block">
-                <div>{{ 'tn3515f3e4' | t }}</div>
-              </a>
-              <a href="#" class="filters5_menu-link-4 last-link w-inline-block">
-                <div>{{ 't4053dee8' | t }}</div>
-              </a>
-              <div class="scrollbar-css w-embed">
-                <style>
-.no-scrollbar {
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
-}
-.no-scrollbar::-webkit-scrollbar {
-    display: none; // Safari and Chrome
-}
-</style>
-              </div>
-            </div>
-          </div>
           <div class="div-block-29 custom-filtering">
             <a href="#" class="link-block-7 w-inline-block">
               <div>{{ 'tn41cedbf8' | t }}</div>
