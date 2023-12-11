@@ -136,23 +136,3 @@
       </div>
     </div>
   </div>
-
-  <!-- Add this script after your HTML content -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get references to the relevant elements
-    const searchLink = document.querySelector(".search-link");
-    const backgroundSearch = document.querySelector(".background-search");
-    const closeBtnSearch = document.querySelector(".close-btn-search");
-
-    // Toggle opacity of backgroundSearch when searchLink is clicked
-    searchLink.addEventListener("click", function () {
-      backgroundSearch.style.opacity = 1;
-    });
-
-    // Toggle opacity of backgroundSearch to 0 when closeBtnSearch is clicked
-    closeBtnSearch.addEventListener("click", function () {
-      backgroundSearch.style.opacity = 0;
-    });
-  });
-</script>
