@@ -365,25 +365,6 @@
   
   
   <!-- <script src="{{ 'webflow.js' | asset_url }}" type="text/javascript" defer></script> -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const logo = document.querySelector('.logo');
-
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 40) {
-                    logo.style.height = '48px';
-                } else {
-                    logo.style.height = '80px';
-                }
-            });
-        });
-    </script>
-    <style>
-    .logo {
-      transition: height 0.1s ease; /* Add a smooth transition effect */
-    }
-    </style>  
   
   <style>
   body { -webkit-font-smoothing: antialiased; }
