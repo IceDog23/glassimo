@@ -25,6 +25,33 @@
   <div class="divider in-decor">
     <div class="divider-line"></div>
   </div>
+
+<!-- Sorting -->
+<div class="main-container">
+  <div class="filtering">
+    <form action="{{ collection.url }}" method="get" class="collection-sorting">
+      <select id="sort-by" name="sort_by">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
+        <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Od nejstaršího</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Od nejnovějšího</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
+      </select>
+      <input type="submit" value="Sort">
+    </form>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var select = document.getElementById('sort-by');
+
+    select.addEventListener('change', function() {
+      var form = document.querySelector('.collection-sorting');
+      form.submit();
+    });
+  });
+</script>
+  
   <section class="product-sections">
     <div class="section-wrapper in-decor">
       <div class="filters5_layout jinak">
