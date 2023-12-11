@@ -202,17 +202,17 @@
 
 <div class="main-container">
   <div class="filtering">
-<form action="{{ collection.url }}" method="get" class="collection-sorting">
-  <select id="sort-by" name="sort_by">
-    <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
-    <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Nejprodávanější</option>
-    <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Od nejstaršího</option>
-    <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Od nejnovějšího</option>
-    <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
-    <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
-  </select>
-  <input type="submit" value="Sort">
-</form>
+    <form action="{{ collection.url }}" method="get" class="collection-sorting">
+      <select id="sort-by" name="sort_by">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected="selected"{% endif %}>Výchozí</option>
+        <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Nejprodávanější</option>
+        <option value="created-ascending" {% if collection.sort_by == 'created-ascending' %}selected="selected"{% endif %}>Od nejstaršího</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected="selected"{% endif %}>Od nejnovějšího</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Cena od nejlevnějšího</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Cena od nejdražšího</option>
+      </select>
+      <input type="submit" value="Sort">
+    </form>
   </div>
 </div>
 
