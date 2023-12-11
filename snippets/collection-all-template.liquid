@@ -384,26 +384,6 @@
       transition: height 0.1s ease; /* Add a smooth transition effect */
     }
     </style>  
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchLink = document.getElementById('search-link');
-            const backgroundSearch = document.querySelector('.background-search');
-            const closeBtnSearch = document.querySelector('.close-btn-search');
-
-            // Toggle opacity to 1 when clicking on the search link
-            searchLink.addEventListener('click', function () {
-                backgroundSearch.style.display = 'flex'; // Display the background-search
-                backgroundSearch.style.opacity = 1; // Set opacity to 1
-            });
-
-            // Toggle opacity to 0 when clicking on the close button
-            closeBtnSearch.addEventListener('click', function () {
-                backgroundSearch.style.opacity = 0; // Set opacity to 0
-                // Optionally, you can use a transitionend event to hide the background-search after the opacity transition is complete
-            });
-        });
-    </script>
   
   <style>
   body { -webkit-font-smoothing: antialiased; }
