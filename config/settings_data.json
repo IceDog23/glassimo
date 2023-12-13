@@ -63,6 +63,7 @@
       "custom_marquee_2": {
         "type": "custom_marquee_2",
         "settings": {
+          "visible": false,
           "marquee_text_italic": "Nový web",
           "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
         }
