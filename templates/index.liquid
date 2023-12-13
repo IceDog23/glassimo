@@ -1,5 +1,7 @@
 {%- assign headerSnippetPath = "header-index" -%}{%- assign wfPage = "65397da03766491d0cad2175" -%}{%- assign bodyClasses = "" -%}
-  {%- section 'custom_marquee' -%}
+  {% if section.settings.marquee_visible %}
+    {%- section 'custom_marquee' -%}
+  {% endif %}
   {%- render 'navigation-1' -%}
   {%- section 'slider-options' -%}
   <section class="product-sections">
