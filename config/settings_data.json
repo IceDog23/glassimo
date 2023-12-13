@@ -7,6 +7,7 @@
       "custom_marquee": {
         "type": "custom_marquee",
         "settings": {
+          "marquee_visible": false,
           "marquee_text_italic": "Nový web",
           "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
         }
@@ -58,14 +59,6 @@
         "settings": {
           "odkaz": "shopify:\/\/policies\/terms-of-service",
           "odkaz_na_dal_strnku": "shopify:\/\/policies\/privacy-policy"
-        }
-      },
-      "custom_marquee_2": {
-        "type": "custom_marquee_2",
-        "settings": {
-          "marquee_visible": true,
-          "marquee_text_italic": "Nový web",
-          "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
         }
       },
       "o-nas-background": {
