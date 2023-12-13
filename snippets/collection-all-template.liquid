@@ -1,5 +1,9 @@
 {%- assign headerSnippetPath = "header-collectionvazy" -%}{%- assign wfPage = "655a50c41e772cae1421e2d4" -%}{%- assign bodyClasses = "" -%}<script>document.documentElement.dataset.wfPage = "655a50c41e772cae1421e2d4"; document.body.setAttribute("class"," collection-template");</script>
-  {%- section 'custom_marquee' -%}
+
+  {% if section.settings.visible %}
+    {%- section 'custom_marquee' -%}
+  {% endif %}
+  
   {%- render 'navigation-1' -%}
   
   <section class="hero-subpage">
