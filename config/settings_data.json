@@ -7,9 +7,9 @@
       "custom_marquee": {
         "type": "custom_marquee",
         "settings": {
-          "marquee_visible": false,
-          "marquee_text_italic": "Nový web",
-          "marquee_text_plain": "Spustili jsme nový web, v případě jakýchkoliv problémů nás neváhejte kontaktovat"
+          "marquee_visible": true,
+          "marquee_text_italic": "Děkujeme za pochopení",
+          "marquee_text_plain": "V úterý 2. ledna 2024 je z technických důvodů zavřeno"
         }
       },
       "slider-options": {
