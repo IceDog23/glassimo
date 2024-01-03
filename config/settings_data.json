@@ -7,7 +7,7 @@
       "custom_marquee": {
         "type": "custom_marquee",
         "settings": {
-          "marquee_visible": true,
+          "marquee_visible": false,
           "marquee_text_italic": "",
           "marquee_text_plain": ""
         }
